@@ -1,10 +1,11 @@
 {
-  "homepage": "https://yaraalmeidaz.github.io/projetoextensao",
+  "homepage": "https://yaraalmeidaz.github.io/literatura_comvest_fuvest",
   "name": "site-literatura",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
