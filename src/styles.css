@@ -1,0 +1,956 @@
+/* ===========================
+   Fonte geral – mais redondinha
+=========================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ===========================
+   Reset básico
+=========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, #fdf7ed 0, #f5efe6 40%, #f1ece5 100%);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===========================
+   Layout base
+=========================== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+:root {
+  --accent: #c0392b;
+  --accent-soft: #fbe4df;
+  --accent-dark: #8c271d;
+  --bg-card: #ffffff;
+  --bg-soft: #f8f3ec;
+  --border-subtle: #e4d9cc;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.16);
+  --shadow-subtle: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --header-height: 72px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 7vw;
+  background: rgba(254, 252, 247, 0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.header h1 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.header nav a:hover {
+  background: rgba(248, 250, 252, 0.9);
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+.header .btn {
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 10px 25px rgba(192, 57, 43, 0.35);
+}
+
+.header .btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   HERO – imagem tela toda
+=========================== */
+.hero-full {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);
+  filter: brightness(0.8);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), transparent 50%),
+    linear-gradient(
+      120deg,
+      rgba(12, 10, 9, 0.75) 0%,
+      rgba(12, 10, 9, 0.45) 35%,
+      rgba(12, 10, 9, 0.15) 70%,
+      rgba(248, 244, 238, 0.95) 100%
+    );
+}
+
+/* Conteúdo da hero */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1080px;
+  padding: 5.5rem 8vw 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #f9fafb;
+}
+
+.hero-tag {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-title {
+  font-size: clamp(2.7rem, 5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  max-width: 18ch;
+  color: #fefcf8;
+  text-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  max-width: 42ch;
+  color: rgba(241, 245, 249, 0.92);
+}
+
+/* ===========================
+   Seções gerais
+=========================== */
+.section {
+  padding: 3rem 8vw;
+}
+
+/* ===========================
+   Card do projeto de extensão
+=========================== */
+.project-section {
+  margin-top: 3.5rem;
+}
+
+.project-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 2.3rem 2.6rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(248, 250, 252, 0.95);
+}
+
+.project-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.project-card p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* ===========================
+   Agenda: calendário + próxima aula
+=========================== */
+.agenda-section {
+  padding-top: 2.2rem;
+  padding-bottom: 3.5rem;
+}
+
+.agenda-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.agenda-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 2.1rem 2.3rem;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-subtle);
+}
+
+.agenda-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-main);
+}
+
+/* Calendário bonitinho */
+.calendar-card {
+  background: linear-gradient(145deg, #fef7f3 0%, #fff 40%, #fdf4f0 100%);
+}
+
+.calendar-widget {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+  margin-bottom: 1rem;
+}
+
+.calendar-month {
+  background: linear-gradient(135deg, var(--accent) 0%, #d35400 100%);
+  color: #fefefe;
+  text-align: center;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.calendar-day {
+  font-size: 3.1rem;
+  font-weight: 800;
+  text-align: center;
+  padding-top: 0.45rem;
+  color: #111827;
+}
+
+.calendar-weekday {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  color: #6b7280;
+}
+
+.calendar-caption {
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-main);
+}
+
+.calendar-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Próxima aula */
+.next-class-card {
+  background: radial-gradient(circle at top left, #fff2ec 0, #ffffff 55%);
+}
+
+.next-class-meta {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+
+.next-class-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 0.4rem;
+}
+
+.next-class-text {
+  font-size: 0.97rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 1.3rem;
+}
+
+.next-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ===========================
+   Botões
+=========================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.96rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(192, 57, 43, 0.38);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: rgba(192, 57, 43, 0.04);
+  color: var(--accent-dark);
+  border-color: rgba(192, 57, 43, 0.35);
+}
+
+.btn-outline:hover {
+  background: rgba(192, 57, 43, 0.09);
+  transform: translateY(-1px);
+}
+
+/* Botão que já existia na página de aulas */
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(192, 57, 43, 0.35);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.12s ease;
+}
+
+.btn-action:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   Formulário (página de inscrição)
+=========================== */
+section.inscricao-section,
+.inscricao-section {
+  padding: 3rem 8vw;
+}
+
+.inscricao-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.inscricao-section form {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inscricao-section label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.inscricao-section input,
+.inscricao-section select,
+.inscricao-section textarea {
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-family: inherit;
+  font-size: 0.96rem;
+}
+
+.checkbox-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+}
+
+/* ===========================
+   Responsivo
+=========================== */
+@media (max-width: 960px) {
+  .hero-content {
+    padding: 4.3rem 6vw 3.3rem;
+  }
+
+  .project-card {
+    padding: 1.9rem 1.9rem;
+  }
+
+  .agenda-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding-inline: 5vw;
+  }
+
+  .header h1 {
+    display: none; /* deixa só o menu, se quiser pode tirar isso */
+  }
+
+  .hero-content {
+    padding-inline: 6vw;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 8vw, 2.7rem);
+  }
+
+  .section {
+    padding-inline: 6vw;
+  }
+
+  .agenda-card,
+  .project-card {
+    padding: 1.6rem 1.5rem;
+  }
+
+  .next-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .calendar-widget {
+    max-width: 100%;
+  }
+}
+/* ==========================================================
+   PÁGINA DE AULAS — visual alinhado ao projeto
+   ========================================================== */
+
+/* Container geral */
+.aulas-section {
+  padding: 3rem 8vw;
+}
+
+.aulas-section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Grid dos cards de aulas */
+.aulas-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card de cada aula */
+.aula-card {
+  background: var(--bg-card);
+  padding: 1.7rem 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.aula-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.14);
+}
+
+/* Cabeçalho do card (data e vestibular) */
+.aula-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.aula-data {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  border-radius: 999px;
+}
+
+.aula-vestibular {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Nome/tema da aula */
+.aula-titulo {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+/* Link de slides */
+.aula-slides {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.aula-slides a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.aula-slides a:hover {
+  opacity: 0.7;
+}
+
+/* Botão de inscrição */
+.aula-card .btn-action {
+  margin-top: 0.3rem;
+}
+
+/* Separador entre blocos, se houver */
+.aulas-divider {
+  margin: 2rem 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .aula-card {
+    padding: 1.4rem 1.5rem;
+  }
+
+  .aula-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .aula-data {
+    font-size: 0.88rem;
+  }
+}
+/* ==========================================================
+   PÁGINA DE INSCRIÇÃO — visual alinhado à Home
+   ========================================================== */
+
+.inscricao-page {
+  padding: 3rem 8vw;
+  display: flex;
+  justify-content: center;
+}
+
+.inscricao-container {
+  width: 100%;
+  max-width: 720px;
+  background: var(--bg-card);
+  padding: 2.6rem 2.8rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(240, 240, 240, 0.8);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.inscricao-container h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.inscricao-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.inscricao-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Labels */
+.inscricao-container label {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.3rem;
+}
+
+/* Inputs gerais */
+.inscricao-container input,
+.inscricao-container select,
+.inscricao-container textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #d8d8d8;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.inscricao-container input:focus,
+.inscricao-container select:focus,
+.inscricao-container textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+  outline: none;
+}
+
+/* Checkbox */
+.checkbox-line {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.96rem;
+  color: var(--text-main);
+}
+
+.checkbox-line input {
+  width: 18px;
+  height: 18px;
+}
+
+/* Botão principal */
+.inscricao-container button[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(192, 57, 43, 0.35);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.inscricao-container button[type="submit"]:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* INFO da aula selecionada */
+.aula-info-box {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
+  padding: 1rem 1.3rem;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.aula-info-box p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.aula-info-box strong {
+  color: var(--accent-dark);
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+
+  .inscricao-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .inscricao-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .inscricao-container input,
+  .inscricao-container textarea {
+    font-size: 0.95rem;
+  }
+}
+.dashboard-page {
+  padding: 3rem 8vw;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.dashboard-cards .card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-soft);
+  min-width: 250px;
+  flex: 1;
+}
+
+.dashboard-cards .card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.charts {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.chart {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  width: 100%;
+  max-width: 600px;
+}
+/* ===============================
+   POPUP DE CONFIRMAÇÃO
+   =============================== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+.popup-box {
+  background: linear-gradient(135deg, #ffffff, #f4f4f4);
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: popupFade 0.4s ease;
+  max-width: 400px;
+}
+
+.popup-box h3 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.popup-box p {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.popup-box button {
+  padding: 0.7rem 1.8rem;
+  border-radius: 30px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.popup-box button:hover {
+  background: var(--accent-dark);
+}
+
+/* animação */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.dashboard-page {
+  padding: 40px;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.charts {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.chart {
+  width: 45%;
+  min-width: 350px;
+}
+
+.ranking {
+  margin-top: 50px;
+}
+
+.rank-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rank-table th, .rank-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.rank-table th {
+  background: #f2f2f2;
+  font-weight: bold;
+}
+/* FOOTER UNIVERSAL */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 20px 0;
+  margin-top: 60px;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #c0392b;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #e74c3c;
+}
