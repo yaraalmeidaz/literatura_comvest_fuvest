@@ -1,87 +1,72 @@
-📚 Projeto de Extensão – Plataforma Web de Inscrições
-🧩 Visão Geral
+# Projeto de Extensão — Plataforma de Inscrições
 
-Este projeto consiste no desenvolvimento de uma aplicação web criada para apoiar um projeto de extensão universitária, atuando como um sistema de inscrição e gerenciamento de participantes.
+Este repositório contém o desenvolvimento de um **site institucional** criado como apoio a um **projeto de extensão universitária**.
 
-Apesar de não fazer parte do escopo inicial do projeto de extensão, a solução foi definida em conjunto com a orientadora como forma de otimizar a comunicação, organização e controle de dados dos estudantes inscritos.
+Embora o desenvolvimento da aplicação não estivesse inicialmente previsto no escopo do projeto, a solução foi idealizada em conjunto com a orientadora com o objetivo de **centralizar a comunicação e organizar as inscrições dos estudantes participantes**.
 
-A aplicação foi integrada a uma página do site institucional de projetos de extensão da universidade.
+O site foi integrado a uma página do portal de projetos de extensão da universidade, funcionando como um **canal oficial do projeto**.
 
-🎯 Objetivos Técnicos
+---
 
-Centralizar o processo de inscrição online
+## 🎯 Objetivo do Projeto
 
-Persistir dados de forma estruturada e consistente
+- Facilitar o processo de **inscrição dos estudantes**
+- Organizar as aulas de acordo com a **quantidade de inscritos**
+- Centralizar informações do projeto em um único ambiente
+- Estruturar os dados para **gestão e elaboração de relatórios**
 
-Facilitar o controle de participantes
+---
 
-Permitir futura extração de relatórios
+## ⚙️ Funcionalidades
 
-Apoiar a gestão do projeto com base em dados reais
+- Página web informativa do projeto de extensão  
+- Formulário de inscrição para estudantes  
+- Armazenamento estruturado dos dados  
+- Organização das informações para uso administrativo  
 
-⚙️ Funcionalidades Implementadas
+---
 
-Formulário web para cadastro de estudantes
+## 🗄️ Banco de Dados
 
-Validação e envio de dados para o backend
+Para o armazenamento das informações foi utilizada a plataforma **Supabase**.
 
-Persistência dos dados em banco relacional
+Os dados foram organizados em **tabelas estruturadas**, evitando informações dispersas e facilitando:
+- A consulta dos dados
+- A manutenção do sistema
+- A geração de relatórios
+- A gestão geral do projeto de extensão
 
-Estrutura preparada para consultas e relatórios
+---
 
-🗄️ Arquitetura de Dados
+## 🛠️ Tecnologias Utilizadas
 
-O backend de dados foi implementado utilizando o Supabase, explorando seu modelo de banco de dados relacional.
+- **Linguagens**
+  - HTML
+  - CSS
+  - JavaScript
 
-Estrutura do Banco
+- **Banco de Dados**
+  - PostgreSQL (Supabase)
 
-Criação de tabelas específicas para armazenar informações dos inscritos
+- **Plataforma**
+  - Supabase (Backend as a Service)
 
-Dados normalizados, evitando informações duplicadas
+- **Versionamento**
+  - Git
+  - GitHub
 
-Organização que permite:
+---
 
-Consulta eficiente
+## 📈 Aprendizados
 
-Manutenção facilitada
+- Desenvolvimento de soluções para contextos educacionais reais  
+- Modelagem e organização de dados em banco relacional  
+- Integração de formulários com backend em nuvem  
+- Apoio tecnológico à gestão de projetos de extensão  
 
-Geração de relatórios administrativos
+---
 
-Os dados não são armazenados de forma isolada ou desorganizada, garantindo integridade e escalabilidade da aplicação.
+## 👩‍💻 Autoria
 
-🛠️ Stack Tecnológica
-
-Frontend:
-
-HTML5
-
-CSS3
-
-JavaScript
-
-Backend / Database:
-
-Supabase (PostgreSQL)
-
-Controle de Versão:
-
-Git
-
-GitHub
-
-📈 Aprendizados Técnicos
-
-Integração frontend com banco de dados em nuvem
-
-Modelagem de dados para sistemas reais
-
-Uso de BaaS (Backend as a Service)
-
-Desenvolvimento de soluções orientadas a dados
-
-Organização de código e versionamento para projetos acadêmicos
-
-👩‍💻 Autoria
-
-Desenvolvido por Yara,
-em colaboração com a orientadora do projeto de extensão
+Projeto desenvolvido por **Yara Almeida**,  
+em colaboração com a orientadora do projeto de extensão.
